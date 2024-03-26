@@ -1,0 +1,76 @@
+<div class="form-container">
+    <form class="form-border" [formGroup]="userForm">
+        <div class="span">
+            <span>Data Source Form</span>
+        </div>
+        <div class="row">
+            <div class="column col-6">
+                <mat-form-field>
+                    <mat-label>Db Base</mat-label>
+                    <mat-select formControlName="dbbase">
+                        @for (item of dbBase; track item) {
+                            <mat-option [value]="item">{{item}}</mat-option>
+                        }
+                    </mat-select>
+                    <mat-error *ngIf="getFormControl('dbbase').invalid && getFormControl('dbbase').touched">
+                        db name is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="column col-6">
+                <mat-form-field>
+                    <mat-label>Host Name</mat-label>
+                    <input matInput formControlName="hostname">
+                    <mat-error *ngIf="getFormControl('hostname').invalid && getFormControl('hostname').touched">
+                        Host name is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column col-6">
+                <mat-form-field>
+                    <mat-label>Name</mat-label>
+                    <input matInput formControlName="name">
+                    <mat-error *ngIf="getFormControl('name').invalid && getFormControl('name').touched">
+                        Name is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="column col-6">
+                <mat-form-field>
+                    <mat-label>Port</mat-label>
+                    <input matInput formControlName="port">
+                    <mat-error *ngIf="getFormControl('port').invalid && getFormControl('port').touched">
+                        port is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column col-6">
+                <mat-form-field>
+                    <mat-label>User Name</mat-label>
+                    <input matInput formControlName="username">
+                    <mat-error *ngIf="getFormControl('username').invalid && getFormControl('username').touched">
+                        user name is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="column col-6">
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input matInput formControlName="password">
+                    <mat-error *ngIf="getFormControl('password').invalid && getFormControl('password').touched">
+                        password is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div align="end" class="button">
+            <button class="save" mat-raised-button color="primary">Save</button>
+            <!-- <button mat-raised-button (click)="closeForm()">cancel</button> -->
+            <button mat-button mat-dialog-close (click)="closeForm()">Cancel</button>
+        </div>
+    </form>
+</div>

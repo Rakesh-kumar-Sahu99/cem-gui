@@ -1,0 +1,28 @@
+<mat-stepper linear #stepper>
+    <mat-step>
+      <form>
+        <ng-template matStepLabel>Step-1</ng-template>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <form>
+        <ng-template matStepLabel>Step-2</ng-template>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+        <form>
+          <ng-template matStepLabel>Step-3</ng-template>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+  </mat-stepper>
