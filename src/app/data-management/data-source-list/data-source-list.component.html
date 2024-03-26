@@ -5,4 +5,8 @@
         <button mat-raised-button color="accent" (click)="openDataSourceForm()"><i class="fa-solid fa-plus"></i>CREATE</button>
     </div>
 </mat-toolbar>
-<app-grid></app-grid>
+<app-grid
+    [columns]="colDefs"
+    [config]="tableConfiguration"
+    [tableData]="data">
+</app-grid>
